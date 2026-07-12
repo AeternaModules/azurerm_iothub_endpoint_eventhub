@@ -1,3 +1,7 @@
+output "iothub_endpoint_eventhubs_id" {
+  description = "Map of id values across all iothub_endpoint_eventhubs, keyed the same as var.iothub_endpoint_eventhubs"
+  value       = { for k, v in azurerm_iothub_endpoint_eventhub.iothub_endpoint_eventhubs : k => v.id }
+}
 output "iothub_endpoint_eventhubs_authentication_type" {
   description = "Map of authentication_type values across all iothub_endpoint_eventhubs, keyed the same as var.iothub_endpoint_eventhubs"
   value       = { for k, v in azurerm_iothub_endpoint_eventhub.iothub_endpoint_eventhubs : k => v.authentication_type }
